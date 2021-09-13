@@ -7,13 +7,12 @@ class HornedBeasts extends React.Component{
             <div>
 
 
+             <h2>{this.props.title} </h2>
 
-
-          HornedBeasts {this.props.title} , {this.props.imageUrl} ,{this.props.description}
-
-
-
-
+             <img src={this.props.imageUrl} alt={this.props.alternative} /> 
+             
+        
+            <p>  {this.props.description}</p>
 
 
 
