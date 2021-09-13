@@ -29,9 +29,7 @@ increase = () =>{
             <div>
 
 
-             <h2> </h2>
-             <h2></h2>
-             <img  width={200}/> 
+            
              
         
             <p>  {this.props.description}</p>
