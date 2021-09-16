@@ -43,9 +43,9 @@ hundleShow =() => {
     <Card.Title>{this.props.title}</Card.Title>
     <Card.Text>
      {this.state.num}
-
-
-       
+    </Card.Text>
+    <Card.Text>
+    {this.props.horns}
     </Card.Text>
     <Button onClick={this.increase} variant="primary">Vote </Button>
   </Card.Body>
