@@ -22,7 +22,9 @@ increase = () =>{
 } 
 
 
-
+hundleShow =() => {
+    this.props.hundleShow(this.props.title)
+}
 
     render(){
         return(
@@ -36,7 +38,7 @@ increase = () =>{
 
 
             <Card   style={{ width: '18rem' }}>
-  <Card.Img variant="top"  onClick={this.props.hundleShow} src={this.props.imageUrl} alt='image broken'/>
+  <Card.Img variant="top"  onClick={this.hundleShow} src={this.props.imageUrl} alt='image broken'/>
   <Card.Body>
     <Card.Title>{this.props.title}</Card.Title>
     <Card.Text>
