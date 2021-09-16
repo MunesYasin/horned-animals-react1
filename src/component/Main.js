@@ -2,8 +2,8 @@ import React from 'react'
 import HornedBeasts from './HornedBeasts'
 import data from './data.json'
 import SelectedBeast from './SelectedBeast'
-
-
+import Form from './Form'
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 class Main extends React.Component{
 
@@ -14,7 +14,9 @@ constructor(props){
   this.state = {
     showModal: false,
      selected : data,
-    animal :{}
+    animal :{},
+    horns : 0
+
   }
 }
 
@@ -23,6 +25,45 @@ hundleClose = () =>{
     showModal: false
   })
 }
+
+
+
+submitForm = async   (event)=>{
+    event.preventDefault();
+
+    await this.setState({
+
+        horns :event.target.number.value
+    })
+
+
+let filterdArray = data.filter (item =>{
+
+
+if (item.horns == this.state.horns){
+    return item 
+}
+
+
+
+
+})
+console.log(filterdArray)
+
+this.setState({
+
+    selected :filterdArray
+  
+   })
+console.log(this.state.selected)
+
+
+
+
+}
+
+
+
 
 
 
@@ -40,11 +81,6 @@ this.setState({
   
 console.log(this.state.animal)
 
-
-
-
-
-
 }
 
     render(){
@@ -54,24 +90,34 @@ console.log(this.state.animal)
 
 <div>
 
-{data.map(item =>{
 
-return (
-<>
+
+<Form submitForm = {this.submitForm} />
+
+
+
+
+
+
+{this.state.selected.map(item =>{
+return(
 
 
 <HornedBeasts 
  hundleShow = {this.clickedImg}
  title={item.title} 
- imageUrl={item.image_url}
+imageUrl={item.image_url}
   description={item.description}
+  horns = {item.horns}
   />
-
-  
-   </>
-    )})
-
+ ) })
 }
+  
+   
+    
+
+
+
 
 
 <SelectedBeast 
