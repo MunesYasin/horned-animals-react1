@@ -40,7 +40,7 @@ submitForm = async   (event)=>{
 let filterdArray = data.filter (item =>{
 
 
-if (item.horns == this.state.horns){
+if (`${item.horns}` === this.state.horns){
     return item 
 }
 
@@ -99,11 +99,12 @@ console.log(this.state.animal)
 
 
 
-{this.state.selected.map(item =>{
+{this.state.selected.map((item,idx) =>{
 return(
 
 
-<HornedBeasts 
+<HornedBeasts
+key={idx} 
  hundleShow = {this.clickedImg}
  title={item.title} 
 imageUrl={item.image_url}

@@ -7,7 +7,6 @@ import Footer from './component/Footer'
 
 
 
-
 class App extends React.Component{
   render(){
 
